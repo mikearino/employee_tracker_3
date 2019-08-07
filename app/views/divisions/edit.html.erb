@@ -1,7 +1,4 @@
+
 <h1>Edit division</h1>
 
-<%= form_for @division do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit  %>
-<% end %>
+<%= render "layouts/division_form" %>

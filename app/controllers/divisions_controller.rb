@@ -13,6 +13,7 @@ class DivisionsController < ApplicationController
   def create
     @division = Division.new(division_params)
     if @division.save
+      flash[:notice] = "You did it!"
       redirect_to divisions_path
     else
       render :new
@@ -41,6 +42,7 @@ class DivisionsController < ApplicationController
   def destroy
     @division = Division.find(params[:id])
     @division.destroy
+    flash[:notice] = "You blew it!"
     redirect_to divisions_path
   end
 

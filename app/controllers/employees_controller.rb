@@ -9,6 +9,7 @@ class EmployeesController < ApplicationController
     @division = Division.find(params[:division_id])
     @employee = @division.employees.new(employee_params)
     if @employee.save
+      flash[:notice] = "You made it!"
       redirect_to division_path(@division)
     else
       render :new
@@ -40,6 +41,7 @@ class EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
+    flash[:notice] = "You deleted it!"
     redirect_to division_path(@employee.division)
   end
 
