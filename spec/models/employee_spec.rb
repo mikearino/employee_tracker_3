@@ -5,7 +5,7 @@ describe Employee do
   it {  should validate_presence_of :name  }
   it { should validate_length_of(:name).is_at_most(20)}
   it { should validate_length_of(:name).is_at_least(2)}
-  it { should have_many(:projects).through(:employee_projects) }
+  it { should have_many(:employees).through(:employee_projects) }
 end
 
 
